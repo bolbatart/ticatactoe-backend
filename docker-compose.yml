@@ -1,0 +1,17 @@
+version: '3'
+services:
+  app:
+    image: docker-node-mongo
+    build: .
+    ports:
+      - '5000:5000'
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'
