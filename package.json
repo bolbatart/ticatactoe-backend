@@ -5,15 +5,20 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@shelf/jest-mongodb": "^1.1.5",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "lodash": "^4.17.15",
-    "mongoose": "^5.9.20"
+    "mongoose": "^5.9.20",
+    "node-mocks-http": "^1.8.1"
+  },
+  "devDependencies": {
+    "jest": "^26.1.0"
   }
 }
