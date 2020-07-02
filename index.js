@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 const port = 5000;
-require('./db/db');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+require('./db/db');
 
 //controllers
 const startGame = require('./controllers/startGame');
@@ -45,7 +45,7 @@ app.get('/start', (res, req) => {
   return startGame(res, req);
 });
 
-app.put('/move/:who', validateMove, (res, req) => {
+app.post('/move/:who', validateMove, (res, req) => {
   return makeMove(res, req);
 });
 

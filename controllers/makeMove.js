@@ -5,8 +5,6 @@ const calculateWinner = require('../helper');
 const makeMove = async (req, res) => {
   try {
     gamesModel.findById(req.body._id, async (err, doc) => {
-      if (err) throw new Error(err);
-
       doc.moves.push({
         who: req.params.who,
         fieldNr: req.body.fieldNr,

@@ -4,7 +4,6 @@ const gamesModel = mongoose.model('games');
 const startGame = async (req, res) => {
   try {
     await gamesModel.find({ finished: false }, (err, arr) => {
-      if (err) throw new Error(err);
       arr.forEach(async (el) => {
         el.finished = true;
         await el.save();

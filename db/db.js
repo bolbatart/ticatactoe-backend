@@ -4,7 +4,7 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
-mongoose.connect('mongodb://localhost:27017/tictactoe', (err) => {
+mongoose.connect('mongodb://mongo:27017/tictactoe', (err) => {
   if (!err) {
     console.log('Successful connection');
   } else {

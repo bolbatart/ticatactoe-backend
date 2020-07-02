@@ -4,8 +4,6 @@ const gamesModel = mongoose.model('games');
 const getAllActions = async (req, res) => {
   try {
     gamesModel.find().exec((err, docs) => {
-      if (err) throw new Error();
-
       return res.send(docs);
     });
   } catch (err) {

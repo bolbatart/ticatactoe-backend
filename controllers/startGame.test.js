@@ -21,11 +21,11 @@ describe('insert', () => {
   });
 
   // tests
-  it('after game start should return started game', async () => {
+  it('game start function should return the correct game object', async () => {
     const games = mongoose.model('games');
 
     const mockStartedGame = {
-      _id: 'some-gmae-id',
+      _id: 'some-game-id',
       moves: [],
       finished: false,
       winner: null,
@@ -33,7 +33,7 @@ describe('insert', () => {
     };
     startGame({}, {});
 
-    games.find({}, (err, doc) => {
+    return games.find({}, (err, doc) => {
       expect(doc).toEqual(mockStartedGame);
     });
   });

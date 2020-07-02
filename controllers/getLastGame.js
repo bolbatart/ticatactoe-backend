@@ -8,7 +8,6 @@ const getLastGame = async (req, res) => {
       .limit(1)
       .sort({ $natural: -1 })
       .exec((err, doc) => {
-        if (err) throw new Error(err);
         return res.send(doc[0]);
       });
   } catch (err) {
